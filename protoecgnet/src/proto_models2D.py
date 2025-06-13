@@ -123,15 +123,15 @@ class ProtoECGNet2D(nn.Module):
         try:
             if self.custom_groups:
                 if self.label_set == "1":
-                    path = "/gpfs/data/bbj-lab/users/sethis/experiments/preprocessing/label_cooccur_Cat1.pt"
+                    path = "/home/paudelasheras/ai-in-healthcare-project/experiments/preprocessing/label_cooccur_Cat1.pt"
                 elif self.label_set == "3":
-                    path = "/gpfs/data/bbj-lab/users/sethis/experiments/preprocessing/label_cooccur_Cat3.pt"
+                    path = "/home/paudelasheras/ai-in-healthcare-project/experiments/preprocessing/label_cooccur_Cat3.pt"
                 elif self.label_set == "4":
-                    path = "/gpfs/data/bbj-lab/users/sethis/experiments/preprocessing/label_cooccur_Cat4.pt"
+                    path = "/home/paudelasheras/ai-in-healthcare-project/experiments/preprocessing/label_cooccur_Cat4.pt"
                 else:
-                    path = "/gpfs/data/bbj-lab/users/sethis/experiments/preprocessing/label_cooccur.pt"
+                    path = "/home/paudelasheras/ai-in-healthcare-project/experiments/preprocessing/label_cooccur.pt"
             else:
-                path = "/gpfs/data/bbj-lab/users/sethis/experiments/preprocessing/label_cooccur_all.pt"
+                path = "/home/paudelasheras/ai-in-healthcare-project/experiments/preprocessing/label_cooccur_all.pt"
 
             cooc_matrix = torch.load(path)
             self.label_cooccurrence = cooc_matrix.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))

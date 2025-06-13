@@ -38,10 +38,10 @@ parser.add_argument('--epochs', type=int, default=20, help="Number of epochs per
 parser.add_argument('--n_trials', type=int, default=50, help="Number of Optuna trials")
 parser.add_argument('--batch_size', type=int, default=32, help="Batch size (can be tuned)")
 parser.add_argument('--use_class_weights', type=str2bool, default=True)
-parser.add_argument('--checkpoint_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints', help="Directory for saving model checkpoints")
-parser.add_argument('--log_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/logs', help="Directory for TensorBoard logs")
-parser.add_argument('--test_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/test_results', help="Directory for test results")
-parser.add_argument('--study_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/optuna_studies', help="Directory for Optuna study")
+parser.add_argument('--checkpoint_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints', help="Directory for saving model checkpoints")
+parser.add_argument('--log_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/logs', help="Directory for TensorBoard logs")
+parser.add_argument('--test_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/test_results', help="Directory for test results")
+parser.add_argument('--study_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/optuna_studies', help="Directory for Optuna study")
 parser.add_argument('--pretrained_weights', type=str, default=None, help='Path to pretrained model weights')
 parser.add_argument('--training_stage', type=str, choices=['feature_extractor', 'prototypes', 'joint', 'projection', 'classifier', 'fusion'], required=True)
 parser.add_argument('--l1', type=float, default=1e-4)
@@ -73,9 +73,9 @@ parser.add_argument('--standardize', type=str2bool, default=False, help='Whether
 parser.add_argument('--remove_baseline', type=str2bool, default=True, help='Whether to remove baseline wander from input ECG signals (high-pass filter)')
 
 #Resnet18 purevanilla weights
-parser.add_argument('--fusion_weights1', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints/cat1_purevanilla_proj2/cat1_purevanilla_proj2_projection.pth', help='Path to pretrained model weights for category 1')
-parser.add_argument('--fusion_weights3', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints/cat3_purevanilla_resnet18_proj1/cat3_purevanilla_resnet18_proj1_projection.pth', help='Path to pretrained model weights for category 3')
-parser.add_argument('--fusion_weights4', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints/cat4_purevanilla_resnet_proj1/cat4_purevanilla_resnet_proj1_projection.pth', help='Path to pretrained model weights for category 4')
+parser.add_argument('--fusion_weights1', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints/cat1_purevanilla_proj2/cat1_purevanilla_proj2_projection.pth', help='Path to pretrained model weights for category 1')
+parser.add_argument('--fusion_weights3', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints/cat3_purevanilla_resnet18_proj1/cat3_purevanilla_resnet18_proj1_projection.pth', help='Path to pretrained model weights for category 3')
+parser.add_argument('--fusion_weights4', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints/cat4_purevanilla_resnet_proj1/cat4_purevanilla_resnet_proj1_projection.pth', help='Path to pretrained model weights for category 4')
 
 parser.add_argument('--fusion_backbone1', type=str, default='resnet1d18', help='Backbone for 1D rhythm model (category 1)')
 parser.add_argument('--fusion_backbone3', type=str, default='resnet18', help='Backbone for 2D partial morphology model (category 3)')

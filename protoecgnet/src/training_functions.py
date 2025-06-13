@@ -457,8 +457,9 @@ def train_model(base_model, train_loader, val_loader, args, class_weights, train
         trainer = pl.Trainer(
             max_epochs=args.epochs,
             accelerator="gpu" if torch.cuda.is_available() else "cpu",
-            devices="auto",  
-            strategy="auto",
+            devices="auto",
+            # This had to be changed to avoid an issue with DDP and unused parameters (we only trained one branch of the model)
+            strategy="ddp_find_unused_parameters_true",
             logger=logger,
             callbacks=[checkpoint_callback, early_stop_callback, lr_monitor],
         )

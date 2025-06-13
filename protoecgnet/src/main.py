@@ -46,9 +46,9 @@ if __name__ == '__main__':
     parser.add_argument('--m', type=float, default=0.05, help='Margin for prototype learning') #unused in our paper
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu", type=str, help="Device to use for projection (cuda or cpu)")
     parser.add_argument('--dropout', type=float, default=0)
-    parser.add_argument('--checkpoint_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints')
-    parser.add_argument('--log_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/logs')
-    parser.add_argument('--test_dir', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/test_results')
+    parser.add_argument('--checkpoint_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints')
+    parser.add_argument('--log_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/logs')
+    parser.add_argument('--test_dir', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/test_results')
     parser.add_argument('--save_top_k', type=int, default=3)
     parser.add_argument('--patience', type=int, default=10)
     parser.add_argument('--resume_checkpoint', type=str2bool, default=None)
@@ -76,9 +76,9 @@ if __name__ == '__main__':
                     default='ReduceLROnPlateau', help="Type of learning rate scheduler to use")
 
     # Fusion classifier-specific arguments
-    parser.add_argument('--fusion_weights1', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints/cat1_static_constants_tune1_proj/cat1_static_constants_tune1_proj_projection.pth', help='Path to pretrained model weights for category 1')
-    parser.add_argument('--fusion_weights3', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints/cat3_static_constants_tune1_tempproj1/cat3_static_constants_tune1_tempproj1_projection.pth' , help='Path to pretrained model weights for category 3')
-    parser.add_argument('--fusion_weights4', type=str, default='/gpfs/data/bbj-lab/users/sethis/experiments/checkpoints/cat4_static_constants_tune1_proj/cat4_static_constants_tune1_proj_projection.pth', help='Path to pretrained model weights for category 4')
+    parser.add_argument('--fusion_weights1', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints/cat1_static_constants_tune1_proj/cat1_static_constants_tune1_proj_projection.pth', help='Path to pretrained model weights for category 1')
+    parser.add_argument('--fusion_weights3', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints/cat3_static_constants_tune1_tempproj1/cat3_static_constants_tune1_tempproj1_projection.pth' , help='Path to pretrained model weights for category 3')
+    parser.add_argument('--fusion_weights4', type=str, default='/home/paudelasheras/ai-in-healthcare-project/experiments/checkpoints/cat4_static_constants_tune1_proj/cat4_static_constants_tune1_proj_projection.pth', help='Path to pretrained model weights for category 4')
     
     parser.add_argument('--fusion_backbone1', type=str, default='resnet1d18', help='Backbone for 1D rhythm model (category 1)')
     parser.add_argument('--fusion_backbone3', type=str, default='resnet18', help='Backbone for 2D partial morphology model (category 3)')
