@@ -1,0 +1,40 @@
+\documentclass[sigconf]{acmart}
+
+\usepackage{booktabs}
+\usepackage[title]{appendix}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{} 
+
+\begin{document}
+\pagestyle{plain}
+\setcounter{page}{0}
+\input{titlepage}
+
+\title{Interpretable ECG Diagnosis with Deep Learning}
+\subtitle{Project Paper}
+
+\author{Pau de las Heras Molins}
+\affiliation{
+  \institution{EPSEM - Universitat Politecnica de Catalunya BarcelonaTech}
+  \city{Barcelona} 
+  \country{Spain}
+  }
+\email{pau.de.las.heras@estudiantat.upc.edu}
+
+\begin{abstract}
+% A summary of results should be included. Avoid citations. Maximum length is 200 words.
+Write your abstract here.
+\end{abstract}
+
+\keywords{keywords, belong, here, with, commas, like, this}
+
+\maketitle
+\input{content}
+
+\bibliographystyle{ACM-Reference-Format}
+% if your .bib file is not named references.bib then replace the name in the line below
+\bibliography{references}
+\newpage
+\input{appendix}
+
+\end{document}
