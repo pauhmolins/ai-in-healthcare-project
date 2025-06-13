@@ -61,6 +61,10 @@ Then, activate TensorBoard logging to be able to visualize the training process 
 tensorboard --logdir=/experiments/logs --port 6006
 ```
 
+As training progresses, TensorBoard allows one to visualize various metrics and generated assets through an intuitive graphical interface:
+
+![tensorboard](images/tensorboard.png)
+
 If working on a remote server (e.g. a HPC), set up port forwarding via SSH  with:
 
 ```bash
