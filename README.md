@@ -37,6 +37,8 @@ ai-in-healthcare-project$>$ tree
     └───logs
 ```
 
+> **NOTE:** Make sure to create the directory structure as shown above, since the code expects certain directories to be in place for it to work correctly. The directories under `experiments` should be created by the code automatically when running the training process, but the containing folder and the `ptb-xl/1.0.3` directory need to be there.
+
 After that, make sure to copy the CSV file `scp_statementsRegrouped2.csv`, to the `ptb-xl/1.0.3` directory. This file is used to group the labels in the dataset according to the original paper's label groupings (of which we will only use label `"1"`, for 1D rhythm).
 
 Finally, we recommend performing a repository-wise replacement (using your favourite tool) of the string `"/home/paudelasheras/ai-in-healthcare-project/"` with the path to your local copy of the repository (e.g. `"/path/to/your/local/repo/ai-in-healthcare-project/"`), so that all paths are correctly set up.
