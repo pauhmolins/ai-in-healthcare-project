@@ -1,6 +1,6 @@
 # Interpretable ECG Diagnosis with Deep Learning
 
-## Sketch-to-Flower translation with CycleGAN and pix2pix
+## Introduction
 
 ![prototype](images/Prototype_201_ECG_rhythm_II.png)
 
